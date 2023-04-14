@@ -18,24 +18,24 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function getMatrixElementsSum(matrix) {
     let sum = 0;
-    for (let i = 0; i < matrix.length; i++) {
-        for (let j = 0; j < matrix[i].length; j++) {
-            const element = matrix[i][j];
-            console.log('element: ', element);
+    for (let col = 0; col < matrix[0].length; col++) {
+        for (let row = 0; row < matrix.length; row++) {
+            if (matrix[row][col] === 0) {
+                break;
+            }
+            sum += matrix[row][col];
         }
     }
     return sum;
-    // throw new NotImplementedError('Not implemented');
-    // // remove line with error and write your code here
 }
 
-const matrix = [
-    [0, 1, 1, 2],
-    [0, 5, 0, 0],
-    [2, 0, 3, 3],
-];
+// const matrix = [
+//     [0, 1, 1, 2],
+//     [0, 5, 0, 0],
+//     [2, 0, 3, 3],
+// ];
 
-console.log(getMatrixElementsSum(matrix));
+// console.log(getMatrixElementsSum(matrix));
 
 module.exports = {
     getMatrixElementsSum,
